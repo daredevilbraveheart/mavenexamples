@@ -8,4 +8,25 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <profiles>
+        <id>test</id>
+        <build>
+        <plugins>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            </version>3.0.0</version>
+        </plugins>
+        <executions>
+            <execution>
+                <phase>test</phase>
+                <goals>
+                    <goal>run</goal>
+                <configuration>
+                    <tasks> 
+                        <echo> Using env.test.properties </echo>
+                    </tasks>
+                </configuration>
+            </execution>
+        </executions>
+    </profiles>
 </project>
